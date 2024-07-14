@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dhatnoon_probation_project/Screens/setting_screen.dart';
 
@@ -80,10 +81,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 20.0),
+              padding: EdgeInsets.only(left: 20.0),
               child: Text(
                 'Logo',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -94,8 +95,8 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           PopupMenuButton<String>(
             onSelected: (value) => onSelectedOption(value, context),
-            offset: Offset(0.0, 56.0),
-            shape: RoundedRectangleBorder(
+            offset: const Offset(0.0, 56.0),
+            shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(8.0),
                 bottomRight: Radius.circular(8.0),
@@ -104,27 +105,27 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             itemBuilder: (BuildContext context) => [
-              PopupMenuItem(
+              const PopupMenuItem(
                 value: 'Refresh',
                 child: Row(
                   children: [
-                    Icon(Icons.refresh_rounded),
+                    Icon(CupertinoIcons.arrow_2_circlepath),
                     SizedBox(width: 10),
                     Text('Refresh'),
                   ],
                 ),
               ),
-              PopupMenuItem(
+              const PopupMenuItem(
                 value: 'Settings',
                 child: Row(
                   children: [
-                    Icon(Icons.settings),
+                    Icon(CupertinoIcons.gear_solid),
                     SizedBox(width: 10),
                     Text('Settings'),
                   ],
                 ),
               ),
-              PopupMenuItem(
+              const PopupMenuItem(
                 value: 'Log Out',
                 child: Row(
                   children: [
@@ -148,14 +149,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 30,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color.fromARGB(255, 186, 186, 186),
+                  color: const Color.fromARGB(255, 186, 186, 186),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Expanded(
                       child: TextField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           contentPadding: EdgeInsets.only(left: 15, bottom: 10),
                           hintText: 'Search name here...',
                           hintStyle: TextStyle(
@@ -166,8 +167,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         onChanged: (value) => _filterItems(value),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10.0),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 10.0),
                       child: Icon(
                         Icons.search,
                         color: Color.fromARGB(255, 121, 121, 121),
